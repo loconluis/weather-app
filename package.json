@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/loconluis/weather-app/issues"
   },
-  "homepage": "https://github.com/loconluis/weather-app#readme"
+  "homepage": "https://github.com/loconluis/weather-app#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
 }
