@@ -5,5 +5,11 @@ request({
   json: true
 }, (err, response, body) => {
   if (err) { }
-  console.log(body)
+  // console.log(JSON.stringify(body.geometry.location, undefined, 2))
+  console.log(`Address: ${body.results[0].formatted_address}`)
+  console.log(`Lat: ${body.results[0].geometry.location.lat}`)
+  console.log(`Lng: ${body.results[0].geometry.location.lng}`)
 })
+
+// body.results[0].geometry.location.lat
+// body.results[0].geometry.location.lng
