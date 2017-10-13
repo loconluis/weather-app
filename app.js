@@ -1,6 +1,7 @@
 const yargs = require('yargs')
 
 const geocode = require('./geocode/geocode')
+const weather = require('./weather/weather')
 
 const argv = yargs
   .option({
@@ -14,12 +15,20 @@ const argv = yargs
   .help()
   .alias('help', 'h')
   .argv
-
+// space
 geocode.geocodeAddress(argv.address, (error, results) => {
   if (error) {
     console.log(error)
   } else {
-    console.log(JSON.stringify(results, undefined, 2))
+    console.log(results.address)
+    // nesting functions
+    weather.getWeather(results.lat, results.lng, (err, data) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(`It's ${data.caption}\nwith ${data.temperature} F degrees.\nIt feels like ${data.apparentTemperature}`)
+      }
+    })
   }
 })
 
