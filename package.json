@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/loconluis/weather-app#readme",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "request": "^2.83.0",
     "yargs": "^9.0.1"
   },
